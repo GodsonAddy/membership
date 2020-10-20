@@ -3,18 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "@material-ui/system": "^4.9.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/express-jwt": "^0.0.42",
+    "axios": "^0.20.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "error-handler": "^1.0.0",
+    "errorhandler": "^1.5.1",
+    "es6-promise": "^4.2.8",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.17.1",
+    "isomorphic-fetch": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jsrsasign": "^10.0.2",
+    "jwt": "^0.2.0",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.7",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-text-mask": "^5.4.3",
+    "twilio": "^3.50.0",
+    "witty-flow-sms": "^1.1.1",
+    "wittyflow": "^1.0.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +60,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "membership form",
+  "main": "server.js",
+  "author": "Godson Addy <godsonaddy@yahoo.co.uk>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
