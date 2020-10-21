@@ -51,7 +51,7 @@ function Login({history}) {
             password
         } 
         setLoading(true)
-        axios.get(`http://localhost:8000/api/users/current`, payload)
+        axios.post(`http://localhost:8000/api/users/login`, payload)
         .then( res => {
             setLoading(false)
             history.push("/Home")

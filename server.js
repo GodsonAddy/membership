@@ -9,6 +9,13 @@ const session = require('express-session');
 var bodyparser = require('body-parser');
 
 
+//Configure mongoose's promise to global promise
+mongoose.promise = global.Promise;
+
+
+//Configure isProduction variable
+const isProduction = process.env.NODE_ENV === 'production';
+
 
 // Body parser middleware
 
@@ -21,35 +28,26 @@ app.use(session({ secret: 'passport-tutorial',
  cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false 
 }));
 
-// Models and routes
-require('./models/Users');
-require('./models/Members');
-require('./config/passport');
-app.use(require('./routes'));
+//Error handlers & middlewares
 
+if(!isProduction) {
+  app.use(errorHandler());
+}
 
-
-//Configure isProduction variable
-const isProduction = process.env.NODE_ENV === 'production';
-
-//Configure mongoose's promise to global promise
-mongoose.promise = global.Promise;
-
-// app.use("/members", MemberRouter);
 
 // static folder
-
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(res => {console.log("success")})
 .catch(res => {console.error("error")})
 mongoose.set('debug', true);
 
-//Error handlers & middlewares
+// Models and routes
+require('./models/Users');
+require('./models/Members');
+require('./config/passport');
+app.use(require('./routes'));
 
-if(!isProduction) {
-  app.use(errorHandler());
-}
 
 if(!isProduction) {
   app.use(( req, res, err) => {

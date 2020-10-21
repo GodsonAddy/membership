@@ -5,7 +5,7 @@ const auth = require('../auth');
 const Users = mongoose.model('Users');
 
 //POST new user route (optional, everyone has access)
-router.post('/', auth.required, (req, res, next) => {
+router.post('/', auth.optional, (req, res, next) => {
   console.log(req)
   const { body: { user }} = req;
   console.log('bdy:::');
@@ -37,7 +37,7 @@ router.post('/', auth.required, (req, res, next) => {
 });
 
 //POST login route (optional, everyone has access)
-router.post('/', auth.required, (req, res, next) => {
+router.post('/login', auth.optional, (req, res, next) => {
   const { body: { user } } = req;
 
   if(!user.email) {
