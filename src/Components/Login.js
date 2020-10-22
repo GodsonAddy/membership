@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(9),
             width: theme.spacing(50),
-            height: theme.spacing(30),
+            height: theme.spacing(35),
             padding: theme.spacing(9)
 
         },
@@ -51,7 +51,7 @@ function Login({history}) {
             password
         } 
         setLoading(true)
-        axios.post(`http://localhost:8000/api/users/login`, payload)
+        axios.get(`http://localhost:8000/api/users/current`, payload)
         .then( res => {
             setLoading(false)
             history.push("/Home")

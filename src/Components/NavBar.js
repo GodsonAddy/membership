@@ -46,12 +46,12 @@ function NavBar({history}) {
             <Toolbar>
             
               <Button className={classes.title} onClick={handleClickMembership} color="inherit">
-                Welcome
+                Directory
               </Button>
               
               <div >
                 <Button color="inherit" onClick={handleClickMember} data-testid="buttons">
-                  Members
+                  SMS-Messages
                 </Button>
                 <Button color="inherit" onClick={handleClick} data-testid="button">
                   Logout
